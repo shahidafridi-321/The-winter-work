@@ -10,9 +10,17 @@ export const Notes = () => {
 		<div>
 			<ul>
 				{!name || name == "all" ? (
-					notes.map((note) => <li key={note.id}>{note.content}</li>)
+					notes.map((note) => (
+						<li key={note.id}>
+							{note.content}{" "}
+							<button>{note.important ? "Important" : "Not Important"}</button>
+						</li>
+					))
 				) : (
-					<li>{note.content}</li>
+					<li>
+						{note.content}{" "}
+						<button>{note.important ? "Important" : "Not Important"}</button>
+					</li>
 				)}
 			</ul>
 		</div>
