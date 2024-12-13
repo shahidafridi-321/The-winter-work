@@ -9,7 +9,7 @@ const getAll = async () => {
 
 const create = async (newObject) => {
 	const response = axios.post(baseUrl, newObject);
-	return (await response).data;
+	return response.data;
 };
 
 const update = async (id, updatedObject) => {
