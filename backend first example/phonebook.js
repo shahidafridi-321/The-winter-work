@@ -38,6 +38,10 @@ app.get("/api/info/", (request, response) => {
 	);
 });
 
+app.get("/api/persons/", (request, response) => {
+	response.json(phonebook);
+});
+
 app.get("/api/persons/:id", (request, response) => {
 	const id = request.params.id;
 	const person = phonebook.find((person) => person.id === id);
@@ -46,7 +50,7 @@ app.get("/api/persons/:id", (request, response) => {
 
 app.delete("/api/persons/:id", (request, response) => {
 	const id = request.params.id;
-	phonebook = phonebook.map((person) => person.id !== id);
+	phonebook = phonebook.filter((person) => person.id !== id);
 	response.status(202).end();
 });
 
