@@ -1,6 +1,6 @@
 const http = require("http");
 
-const phonebook = [
+let phonebook = [
 	{
 		id: "1",
 		name: "Arto Hellas",
@@ -42,6 +42,12 @@ app.get("/api/persons/:id", (request, response) => {
 	const id = request.params.id;
 	const person = phonebook.find((person) => person.id === id);
 	person ? response.json(person) : response.status(404).end();
+});
+
+app.delete("/api/persons/:id", (request, response) => {
+	const id = request.params.id;
+	phonebook = phonebook.map((person) => person.id !== id);
+	response.status(202).end();
 });
 
 const PORT = 3006;
