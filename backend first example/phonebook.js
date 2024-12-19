@@ -30,6 +30,8 @@ let phonebook = [
 const express = require("express");
 const app = express();
 
+app.use(express.json());
+
 app.get("/api/info/", (request, response) => {
 	response.send(
 		`<p>Phone book has info for ${
@@ -52,6 +54,33 @@ app.delete("/api/persons/:id", (request, response) => {
 	const id = request.params.id;
 	phonebook = phonebook.filter((person) => person.id !== id);
 	response.status(202).end();
+});
+const generateId = () => {
+	const id = Math.floor(Math.random() * 10000);
+	return String(id);
+};
+
+app.post("/api/persons/", (request, response) => {
+	const body = request.body;
+	if (!body.name || !body.number) {
+		return response.status(400).json({
+			error: "Name or Number is missing",
+		});
+	}
+	const personPresent = phonebook.find((person) => person.name === body.name);
+	if (personPresent) {
+		return response.status(400).json({
+			error: "This person is already in list",
+		});
+	}
+	const person = {
+		id: generateId(),
+		name: body.name,
+		number: body.number,
+	};
+
+	phonebook = phonebook.concat(person);
+	response.json(person);
 });
 
 const PORT = 3006;
