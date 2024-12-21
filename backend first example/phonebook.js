@@ -32,8 +32,13 @@ const morgan = require("morgan");
 
 const app = express();
 app.use(express.json());
-app.use(morgan("common"));
 
+morgan.token("custom", (request) =>
+	request.method === "POST" ? JSON.stringify(request.body) : null
+);
+app.use(
+	morgan(":method :url :status :res[content-length] :response-time ms :custom")
+);
 
 app.get("/api/info/", (request, response) => {
 	response.send(
