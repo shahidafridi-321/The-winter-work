@@ -28,9 +28,12 @@ let phonebook = [
 }); */
 
 const express = require("express");
-const app = express();
+const morgan = require("morgan");
 
+const app = express();
 app.use(express.json());
+app.use(morgan("common"));
+
 
 app.get("/api/info/", (request, response) => {
 	response.send(
