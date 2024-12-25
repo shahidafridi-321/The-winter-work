@@ -44,9 +44,7 @@ app.use(express.static("dist"));
 app.get("/testingroute", (request, response) => {
 	response.send("<h1>Testing route</h1>");
 });
-app.get("/", (request, response) => {
-	response.send("<h1>Hello world</h1>");
-});
+
 app.get("/api/notes", (request, response) => {
 	response.json(notes);
 });
