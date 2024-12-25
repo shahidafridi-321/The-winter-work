@@ -16,6 +16,11 @@ let notes = [
 		content: "GET and POST are the most important methods of HTTP protocol",
 		important: true,
 	},
+	{
+		id: "6",
+		content: "Shahid khan",
+		important: true,
+	},
 ];
 
 /* const app = http.createServer((request, response) => {
