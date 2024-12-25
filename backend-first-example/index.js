@@ -35,6 +35,9 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
+app.get("/testingroute", (request, response) => {
+	response.send("<h1>Testing route</h1>");
+});
 app.get("/", (request, response) => {
 	response.send("<h1>Hello world</h1>");
 });
