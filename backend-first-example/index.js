@@ -44,6 +44,12 @@ app.use(express.static("dist"));
 app.get("/testingroute", (request, response) => {
 	response.send("<h1>Testing route</h1>");
 });
+const path = require("path");
+
+// Serve React frontend for unmatched routes
+app.get("*", (req, res) => {
+	res.sendFile(path.resolve(__dirname, "dist", "index.html"));
+});
 
 app.get("/api/notes", (request, response) => {
 	response.json(notes);
