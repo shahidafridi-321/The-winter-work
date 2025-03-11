@@ -7,6 +7,6 @@ import Profile from "./Profle";
 
 createRoot(document.getElementById("root")).render(
 	<StrictMode>
-		<Profile  delay={1000}/>
+		< />
 	</StrictMode>
 );

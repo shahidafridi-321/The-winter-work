@@ -1,0 +1,28 @@
+{
+	"data": [
+		{
+			"id": "1",
+			"name": "shahid",
+			"email": "shahid@gmai.com",
+			"phone": "87613163"
+		},
+		{
+			"id": "2",
+			"name": "ali",
+			"email": "sjhahd@gmai.com",
+			"phone": "8897318613163"
+		},
+		{
+			"id": "3",
+			"name": "jan",
+			"email": "jan@gmai.com",
+			"phone": "0298398"
+		},
+		{
+			"id": "4",
+			"name": "khan",
+			"email": "khan@gmai.com",
+			"phone": "03201992"
+		}
+	]
+}
