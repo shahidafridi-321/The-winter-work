@@ -60,3 +60,8 @@ section {
 	background: rgb(48, 47, 47);
 	color: azure;
 }
+
+.items {
+	display: flex;
+	gap: 5px;
+}
