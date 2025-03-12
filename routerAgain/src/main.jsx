@@ -15,6 +15,7 @@ import { SingleItem } from "./SingleItem.jsx";
 import { getSingleItemDetails } from "./SingleItem.jsx";
 import { Auth } from "./Auth.jsx";
 import { MyApp } from "./MyApp.jsx";
+import { HeadingApp } from "./HeadingApp.jsx";
 const isLoggedIn = true;
 
 const routes = createBrowserRouter([
@@ -55,6 +56,6 @@ const routes = createBrowserRouter([
 ]);
 createRoot(document.getElementById("root")).render(
 	<StrictMode>
-		<MyApp />
+		<HeadingApp />
 	</StrictMode>
 );
