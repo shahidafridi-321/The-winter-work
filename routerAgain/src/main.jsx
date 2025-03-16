@@ -19,6 +19,7 @@ import { HeadingApp } from "./HeadingApp.jsx";
 import { Reducer } from "./Reducer.jsx";
 import { TasksApp } from "./TasksApp.jsx";
 import { PersonsReducer } from "./PersonsReducer.jsx";
+import { UseRef } from "./UseRef.jsx";
 const isLoggedIn = true;
 
 const routes = createBrowserRouter([
@@ -59,6 +60,6 @@ const routes = createBrowserRouter([
 ]);
 createRoot(document.getElementById("root")).render(
 	<StrictMode>
-		<PersonsReducer />
+		<UseRef />
 	</StrictMode>
 );
