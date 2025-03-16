@@ -1,3 +1,8 @@
+/* 
+useRef hook is used for DOM manipulation in react just as we do in vanila javascript, the use of useRef hook is similar
+to useState but the diffrenece is the useRef do not triggers re-render unlike useState. it is used to do something with a dom element within react such as animations,styles,or something else
+ */
+
 import React from "react";
 import { useEffect } from "react";
 import { useRef } from "react";
