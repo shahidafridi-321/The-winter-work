@@ -10,7 +10,6 @@ import { useRef } from "react";
 export const UseRef = () => {
 	const buttonRef = useRef(null);
 	const data = useRef(0);
-	console.log(data);
 
 	useEffect(() => {
 		buttonRef.current.focus();
@@ -35,6 +34,7 @@ const Para = () => {
 	useEffect(() => {
 		paraRef.current.innerHTML =
 			"<p>This content is going to change in 3 seconds!</p>";
+
 		setTimeout(() => {
 			paraRef.current.innerHTML =
 				"<h1>See i am Changed to Level 1 heading</h1>";
