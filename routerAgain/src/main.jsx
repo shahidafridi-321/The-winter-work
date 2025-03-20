@@ -60,6 +60,6 @@ const routes = createBrowserRouter([
 ]);
 createRoot(document.getElementById("root")).render(
 	<StrictMode>
-		<Profiler onRender={onRender}></Profiler>
+		<UseRef />
 	</StrictMode>
 );

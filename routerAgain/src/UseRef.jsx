@@ -9,6 +9,9 @@ import { useRef } from "react";
 
 export const UseRef = () => {
 	const buttonRef = useRef(null);
+	const data = useRef(0);
+	console.log(data);
+
 	useEffect(() => {
 		buttonRef.current.focus();
 		buttonRef.current.textContent = "Hey i am different";
@@ -19,7 +22,10 @@ export const UseRef = () => {
 	return (
 		<div>
 			<Para />
-			<button ref={buttonRef}>Click me!</button>
+			<button ref={buttonRef} onClick={() => data.current++}>
+				Click me!
+			</button>
+			<p>{data.current}</p>
 		</div>
 	);
 };
